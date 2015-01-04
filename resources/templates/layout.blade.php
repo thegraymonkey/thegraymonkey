@@ -19,13 +19,14 @@
     <![endif]-->
 
     <!-- Custom styles for this template -->
-    <link href="/bootstrap/css/carousel.css" rel="stylesheet">
+    
+      <link href="/bootstrap/css/sticky-footer-navbar.css" rel="stylesheet">
     @yield('top_css')
 
   </head>
 <!-- NAVBAR
 ================================================== -->
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">    
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">    
 		<div class="container" >
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -40,17 +41,17 @@
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li @if($current_page === 'posts.index')class="active"@endif><a href="{{ url('posts.index') }}">Blog</a></li>            
-					<li @if($current_page === 'projects.index')class="active"@endif><a href="{{ url('projects.index') }}">Projects</a></li>            
-					<li @if($current_page === 'cv.index')class="active"@endif><a href="{{ url('cv.index') }}">CV</a></li>
-					<li @if($current_page === 'contacts.index')class="active"@endif><a href="{{ url('contacts.index')}}">Contact</a></li>
+					<li @if($current_page === 'posts')class="active"@endif><a href="{{ url('posts') }}">Blog</a></li>            
+					<li @if($current_page === 'projects')class="active"@endif><a href="{{ url('projects') }}">Projects</a></li>            
+					<li @if($current_page === 'cv')class="active"@endif><a href="{{ url('cv') }}">CV</a></li>
+					<li @if($current_page === 'contacts')class="active"@endif><a href="{{ url('contacts')}}">Contact</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right"> 
 					@if(Auth::check()) 
 					<li><a href="{{ url('auth/logout') }}">Logout</a></li>
 					@else
-					<li><img src="" alt="srb"></li>
-					<li @if($current_page === 'auth.login')class="active"@endif><a href="{{ url('auth/login') }}">Prijava</a></li>
+					<li><a href=""><img src="/images/srb.png" alt="srb"></a></li>
+					<li @if($current_page === 'auth.login')class="active"@endif><a href="{{ url('auth/login') }}">Login</a></li>
 					@endif
 				</ul>
 			</div><!--/.nav-collapse -->
@@ -59,8 +60,7 @@
 
 		
 
-	@yield('home')
-
+	
 	
   		
 	@yield('intro')
@@ -76,19 +76,23 @@
 	</div>
 
 
-	<hr class="featurette-divider">
+	
 
-	<footer class="sticky-footer">
+	<footer class="footer">
     <div class="container">
-      	<div class="row">
-        
-    		<div class="col-lg-5">
-        		<h4 class="text-muted">Powered by <a href="#">TheGrayMonkey</a></h4>
-			</div>
-			<div class="col-lg-7">
-        		<h4 class="pull-right"><a href="#">Početak strane</a></h4>
-    		</div>
-		</div>      
+      	<div class="col-lg-4">
+        	<h4 class="text-muted">TheGrayMonkey.com</h4>
+       </div>
+        <div class="col-lg-8">
+        <ul class="nav nav-pills pull-right">
+  		
+  		<li><a href="https://www.facebook.com/andjelko.stefanov" target="blank"><h5>Facebook</h5></a></li>
+  		<li><a href="https://www.linkedin.com/pub/andjelko-stefanov/a0/8ab/2b4?domainCountryName=&csrfToken=ajax%3A0290766932108895506" target="blank"><h5>LinkedIn</h5></a></li>
+  		<li><a href="https://twitter.com/thegraymonkey" target="blank"><h5>Twiter</h5></a></li>
+  		<li><a href="https://github.com/thegraymonkey" target="blank"><h5>GitHub</h5></a></li>
+  		</ul>
+  		</div>
+						
     </div>
     </footer>
 	

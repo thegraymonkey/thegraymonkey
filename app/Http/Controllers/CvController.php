@@ -6,7 +6,7 @@ class CvController extends Controller {
 
 	public function index()
 	{
-		return view('cv.index', ['current_page'=>'cv.index']);
+		return view('cv.index', ['current_page'=>'cv']);
 	}
 
 	public function create()

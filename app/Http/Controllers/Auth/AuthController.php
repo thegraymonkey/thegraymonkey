@@ -18,4 +18,8 @@ class AuthController extends Controller {
 
 	use AuthenticatesAndRegistersUsers;
 
+	public function getLogin()
+	{
+		return view('auth.login', ['current_page' => 'auth.login']);
+	}
 }

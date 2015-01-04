@@ -6,7 +6,7 @@ class ContactController extends Controller {
 
 	public function index()
 	{
-		return view('contact.index', ['current_page'=>'contacts.index']);
+		return view('contacts.index', ['current_page'=>'contacts']);
 	}
 
 	public function create()

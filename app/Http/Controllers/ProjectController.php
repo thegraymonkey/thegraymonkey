@@ -8,7 +8,7 @@ class ProjectController extends Controller {
 	{
 		$projects = Project::all();
 
-		return view('projects.index', ['projects'=>$projects, 'current_page'=>'projects.index']);
+		return view('projects.index', ['projects'=>$projects, 'current_page'=>'projects']);
 	}
 
 	public function create()
