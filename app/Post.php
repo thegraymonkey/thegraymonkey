@@ -9,9 +9,8 @@ class Post extends Model {
 	[
 		'title',
 		'description',
-		'content',
-		'filename',
-		'image_description'
+		'content'
+		
 
 	];
 

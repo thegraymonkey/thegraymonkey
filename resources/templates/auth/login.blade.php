@@ -4,7 +4,8 @@
 	
 		@include('common.intro', [
 		'intro_title' => 'Welcome GrayMonkey!',
-		'intro_subtitle' => 'Login to write posts or add projects...'  
+		'intro_subtitle' => 'Login to write posts or add projects... but if you are not TheGrayMonkey...',
+		'intro_image' => 'pekman5.jpg'   
 	])
 	
 @stop

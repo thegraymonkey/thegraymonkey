@@ -16,8 +16,7 @@ Route::get('/', 'HomeController@index');
 $router->resource('posts', 'PostController', ['only' => ['index', 'show', 'create', 'store', 'destroy', 'edit', 'update']]);
 $router->resource('projects', 'ProjectController', ['only' => ['index', 'show', 'create', 'store', 'destroy', 'edit', 'update']]);
 $router->resource('cv', 'CvController', ['only' => ['index', 'show', 'create', 'store', 'destroy', 'edit', 'update']]);
-$router->resource('contacts', 'ContactController', ['only' => ['index', 'show', 'create', 'store', 'destroy', 'edit', 'update']]);
-
+$router->controller('contacts', 'ContactController');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

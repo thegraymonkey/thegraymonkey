@@ -80,6 +80,7 @@
 
 	<footer class="footer">
     <div class="container">
+    	
       	<div class="col-lg-4">
         	<h4 class="text-muted">TheGrayMonkey.com</h4>
        </div>

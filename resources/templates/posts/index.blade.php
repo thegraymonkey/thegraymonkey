@@ -7,8 +7,6 @@
 		'intro_subtitle' => 'I write about economy, programing, sports and poker...',
 		'intro_image' => 'pekman2.jpg'  
 	])
-
-
 	
 @stop
 
@@ -25,15 +23,21 @@
             <blockquote>
               <p>{{ $post->description }}</p>
             </blockquote>
-            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-            <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-    </div>
-    <img source>
-
+            <p>{!! $post->content !!}</p>
 
     <!-- /.blog-post -->
-
+		
+			<form action="{{ route('posts.destroy', [$post->id]) }}" method="post">
+				<input type="hidden" name="_method" value="delete">
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				<input type="submit" value="Delete" class="btn btn-danger">
+			</form>
+			
+			<div>
+				<a class="btn btn-warning" href="{{ route('posts.edit', [$post->id]) }}">Edit</a>
+			</div>	
+	</div>	
+		
 
 
 <hr>

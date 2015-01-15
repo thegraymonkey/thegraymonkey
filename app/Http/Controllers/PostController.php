@@ -14,77 +14,75 @@ class PostController extends Controller {
 	
 	public function index()
 	{
-
 		$posts = Post::all();
 
 		return view('posts.index', ['posts'=>$posts, 'current_page'=>'posts']);
 	}
+
 
 	public function create()
 	{
 		return view('posts.create');
 	}
 
+
 	public function store()
+	{
+		$input = Request::all();	
+
+		$post = new Post;
+		
+		$post->title = $input['title'];
+
+		$post->content = $input['content'];
+			
+		$post->description = $input['description'];
+
+		$post->save();
+
+		return redirect('posts')->with('message', 'Post created!');
+		
+	}
+
+
+	public function edit($id)
+	{
+		$post = Post::find($id);
+
+		return view('posts.edit', ['current_page'=>'posts/$id/edit'])->with('post', $post);
+	}
+
+
+	public function destroy($postId)
+	{
+
+		if ($post = Post::find($postId))
+		{
+				$post->delete();
+
+				return redirect('posts')->with('message', 'Post deleted!');
+		}			
+				return redirect('posts')->with('message', 'Post does not exist!');	
+	}
+
+
+	
+
+	public function update($id)
 	{
 		$input = Request::all();
 
-		$rules = [
-			'photo' => 'image|max:5024',
-		];
+		$post = Post::find($id);
 
-		$validation = Validator::make($input, $rules);
-
-		if ($validation->passes())
+		if ($post)
 		{
-			
-			$image = Request::file('photo');
-		
-			// file name factory
-			$fileName = time() . md5($image->getClientOriginalName());
-			$fileExt = $image->getClientOriginalExtension();
-
-			// image path
-			$originalImagePath = public_path().'/upload/posts/' . $fileName . '.' . $fileExt;
-			
-			// save original
-			//Image::make($image)
-				//->widen(400)
-				//->save($originalImagePath);
-
-			$post = new Post;
-		
-			$post->title = $input['title'];
-
-			$post->content = $input['content'];
-			
-			$post->description = $input['description'];
-
-			$post->image_description = $input['image_description'];
-
-			$post->filename = $fileName;
-
-			$post->file_ext = $fileExt;
+			$post->fill($input);
 
 			$post->save();
 
-			return redirect('posts')->with('message', 'Post created!');
-		}	
-		return redirect('posts')->withErrors($validation);
+			return redirect('posts')->with('message', 'Post updated!');
+		}
+		return redirect('posts')->with('message', 'Updating failed!');
 	}
 
-	public function edit()
-	{
-
-	}
-
-	public function update()
-	{
-
-	}
-
-	public function destroy()
-	{
-
-	}
 }

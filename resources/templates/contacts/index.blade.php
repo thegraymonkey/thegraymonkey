@@ -14,27 +14,27 @@
 
 @include('common.messages')
 
-<form class="well" role="form" action="{{ url('contacts/send') }}" method="POST">
+<form role="form" action="{{ url('contacts/send') }}" method="POST">
 
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     
     <div class="form-group">
-      <label for="email">E-mail</label>
-      <input type="email" class="form-control" id="email" placeholder="E-mail" name="email">
+      <label for="email">E-mejl adresa</label>
+      <input type="email" class="form-control" id="email" placeholder="Email" name="email">
     </div>
 
     <div class="form-group">
-      <label for="subject">Subject</label>
-      <input type="text" class="form-control" id="subject" placeholder="Subject" name="subject">
+      <label for="subject">Predmet</label>
+      <input type="text" class="form-control" id="subject" placeholder="Predmet" name="subject">
     </div>
 
     <div class="form-group">
-      <label for="message">Message</label>
-      <textarea class="form-control" type="text" id="message" placeholder="Message" name="message"></textarea>
+      <label for="message">Poruka</label>
+      <textarea class="form-control" type="text" id="message" placeholder="Poruka" name="message"></textarea>
     </div>
     
     <div class="form-group">
-    <button type="submit" class="btn btn-primary">Send Message</button>
+    <button type="submit" class="btn btn-primary">Pošalji</button>
     </div>
 
   </form>
