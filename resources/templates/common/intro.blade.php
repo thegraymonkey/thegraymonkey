@@ -1,5 +1,5 @@
 
-
+@if(!Auth::check());
 	<div class="jumbotron">
 		<div class="container " style="padding-top:50px">
 			<div class="row">
@@ -14,4 +14,5 @@
 			</div>
 		</div>
 		</div>
-		
+	
+@endif	

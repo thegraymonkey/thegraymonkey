@@ -11,7 +11,11 @@
 @stop
 
 @section('content')
-<form class="form-horizontal well">
+
+@include('common.messages')
+
+<form class="form-horizontal well" action="{{ url('auth/login') }}" method="POST">
+  <input type="hidden" name="_token" value="{{ csrf_token() }}">  
   
     <div class="form-group">
       <label for="inputEmail" class="col-lg-2 control-label">Email</label>
@@ -25,7 +29,7 @@
         <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
         <div class="checkbox">
           <label>
-            <input type="checkbox"> Remember me
+            <input name="remember" value="1" type="checkbox"> Remember me
           </label>
         </div>
       </div>

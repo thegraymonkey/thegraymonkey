@@ -16,6 +16,8 @@
 
 @include('common.messages')
 
+@if(Auth::check())
+
 <form method="POST" class="form-horizontal well" action="{{ route('posts.update', [$post->id]) }}">
 	
 	<input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -47,6 +49,10 @@
       </div>
     </div>
 
+@else
+
+<p class="alert alert-danger">YOU HAVE TO BE LOGGED IN TO EDIT ANYTHING YOU SHOULD KNOW BETTER MONKEY!!!</p>
 	
+@endif
 
 @stop

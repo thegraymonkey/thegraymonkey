@@ -1,4 +1,4 @@
-<!--@if(!Auth::check())-->
+@if(Auth::check())
 
 <form class="form-horizontal well">
   
@@ -44,4 +44,4 @@
   
 </form>
 
-<!--@endif-->
+@endif

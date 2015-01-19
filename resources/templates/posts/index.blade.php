@@ -17,8 +17,8 @@
 @include('posts.create')
 
 @foreach($posts as $post)
-	<div class="blog-post">
-        <h2 class="blog-post-title">{{ $post->title }}</h2>
+	<div style="margin-bottom:50px" class="blog-post">
+        <h1 class="blog-post-title">{{ $post->title }}</h1>
         <p class="blog-post-meta">{{ $post->created_at }} by <strong>Andjelko</strong></p>
             <blockquote>
               <p>{{ $post->description }}</p>
@@ -26,7 +26,7 @@
             <p>{!! $post->content !!}</p>
 
     <!-- /.blog-post -->
-		
+		@if(Auth::check())
 			<form action="{{ route('posts.destroy', [$post->id]) }}" method="post">
 				<input type="hidden" name="_method" value="delete">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -36,11 +36,13 @@
 			<div>
 				<a class="btn btn-warning" href="{{ route('posts.edit', [$post->id]) }}">Edit</a>
 			</div>	
+		@endif
+
 	</div>	
-		
 
 
-<hr>
+
+
 @endforeach
 
 

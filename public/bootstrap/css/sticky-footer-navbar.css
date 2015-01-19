@@ -6,7 +6,7 @@ html {
 }
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 60px;
+  margin-bottom: 100px;
 }
 .footer {
   position: absolute;
@@ -15,7 +15,7 @@ body {
   /* Set the fixed height of the footer here */
   height: 60px;
   background-color: #272B30;
-  border: 1px solid black;
+  border-top: 1px solid black;
 }
 
 
@@ -33,6 +33,7 @@ body > .container {
 .footer > .container {
   padding-right: 15px;
   padding-left: 15px;
+
 }
 
 code {

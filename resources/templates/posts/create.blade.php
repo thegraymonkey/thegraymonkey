@@ -1,4 +1,4 @@
-<!--@if(!Auth::check())-->
+@if(Auth::check())
   
   <form class="form-horizontal well" method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
     
@@ -33,4 +33,4 @@
   
 </form>
 
-<!--@endif-->
+@endif

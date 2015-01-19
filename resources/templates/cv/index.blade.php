@@ -41,11 +41,12 @@
 		<h2>Programing skills:</h2>
 		<p>{!! $cv->skills !!}</p>
 	</div>
-			
+	
+	@if(Auth::check())	
 	<div>
 		<a class="btn btn-warning" style="margin-bottom:10px;" href="{{ route('cv.edit', [$cv->id]) }}">Edit</a>
 	</div>
-
+	@endif
 @endforeach
 
 @stop

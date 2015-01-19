@@ -47,7 +47,7 @@
 					<li @if($current_page === 'contacts')class="active"@endif><a href="{{ url('contacts')}}">Contact</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right"> 
-					@if(Auth::check()) 
+					@if(Auth::check())					
 					<li><a href="{{ url('auth/logout') }}">Logout</a></li>
 					@else
 					<li><a href=""><img src="/images/srb.png" alt="srb"></a></li>
