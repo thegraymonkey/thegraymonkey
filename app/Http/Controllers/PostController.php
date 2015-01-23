@@ -28,6 +28,9 @@ class PostController extends Controller {
 
 	public function store()
 	{
+
+		if(Auth::check())
+		{
 		$input = Request::all();	
 
 		$post = new Post;
@@ -41,28 +44,37 @@ class PostController extends Controller {
 		$post->save();
 
 		return redirect('posts')->with('message', 'Post created!');
-		
+		}
+		return redirect('posts')->with('message', 'Login to save post!');
 	}
 
 
 	public function edit($id)
 	{
+		if(Auth::check())
+		{
 		$post = Post::find($id);
 
 		return view('posts.edit', ['current_page'=>'posts/$id/edit'])->with('post', $post);
+		}
+		return redirect('posts')->with('message', 'Login to edit post!');
+	
 	}
 
 
 	public function destroy($postId)
 	{
-
+		if(Auth::check())
+		{
 		if ($post = Post::find($postId))
 		{
-				$post->delete();
+			$post->delete();
 
-				return redirect('posts')->with('message', 'Post deleted!');
-		}			
-				return redirect('posts')->with('message', 'Post does not exist!');	
+			return redirect('posts')->with('message', 'Post deleted!');
+		}	
+			return redirect('posts')->with('message', 'Post does not exist!');	
+		}		
+			return redirect('posts')->with('message', 'Login to delete!');	
 	}
 
 
@@ -70,6 +82,9 @@ class PostController extends Controller {
 
 	public function update($id)
 	{
+
+		if(Auth::check())
+		{
 		$input = Request::all();
 
 		$post = Post::find($id);
@@ -81,6 +96,8 @@ class PostController extends Controller {
 			$post->save();
 
 			return redirect('posts')->with('message', 'Post updated!');
+		}
+			return redirect('posts')->with('message', 'Login to update post!');
 		}
 		return redirect('posts')->with('message', 'Updating failed!');
 	}

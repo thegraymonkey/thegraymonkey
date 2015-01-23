@@ -9,7 +9,7 @@
     <div class="form-group">
       <label for="title" class="col-lg-2 control-label">Title</label>
       <div class="col-lg-10">
-        <textarea type="text" class="form-control" id="title" name="title" placeholder="Title"></textarea>
+        <textarea type="text" class="form-control" id="title" name="title" placeholder="Title" required autofocus></textarea>
       </div>
     </div>
     <div class="form-group">

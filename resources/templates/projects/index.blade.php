@@ -11,6 +11,13 @@
 
 @section('content')
 
+@include('common.messages')
+
 @include('projects.create')
+
+@foreach($projects as $project)
+<h1>{{ $project->title }}</h1>
+<img src="{{ url($project->getImagePath()) }}" class="img-thumbnail">
+@endforeach
 
 @stop

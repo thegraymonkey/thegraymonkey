@@ -28,6 +28,8 @@ class CvController extends Controller {
 
 	public function store()
 	{
+		if(Auth::check())
+		{
 		$input = Request::all();	
 
 		$cv = new Cv;
@@ -37,6 +39,8 @@ class CvController extends Controller {
 		$cv->save();
 
 		return redirect('cv')->with('message', 'CV created!');
+		}
+		return redirect('cv')->with('message', 'Please don\'t try that again');
 	}
 
 	public function edit($id)
@@ -48,6 +52,7 @@ class CvController extends Controller {
 
 	public function update($id)
 	{
+		if(Auth::check()){
 		$input = Request::all();
 
 		$cv = Cv::find($id);
@@ -60,6 +65,8 @@ class CvController extends Controller {
 
 			return redirect('cv')->with('message', 'Cv updated!');
 		}
+		return redirect('cv')->with('message', 'Login to update CV!');
+	}
 		return redirect('cv')->with('message', 'Updating failed!');
 	}
 

@@ -48,7 +48,7 @@
         <button type="submit" class="btn btn-primary">Update</button>
       </div>
     </div>
-
+</form>
 @else
 
 <p class="alert alert-danger">YOU HAVE TO BE LOGGED IN TO EDIT ANYTHING YOU SHOULD KNOW BETTER MONKEY!!!</p>

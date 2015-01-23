@@ -6,7 +6,9 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "~5.0",
-		"intervention/image": "2.0.16"
+		"intervention/image": "2.0.17"
+		
+		
 
 
 	},

@@ -14,7 +14,7 @@
 
 @include('common.messages')
 
-<!--@if(!Auth::check())-->
+@if(Auth::check())
   
   <form class="form-horizontal well" method="POST" action="{{ route('cv.update', [$cv->id]) }}">
     
@@ -67,5 +67,5 @@
    
 </form>
 
-<!--@endif-->
+@endif
 @stop
