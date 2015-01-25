@@ -13,6 +13,8 @@
 
 Route::get('/', 'HomeController@index');
 
+Route::get('srb', 'SrbController@index');
+
 $router->resource('posts', 'PostController', ['only' => ['index', 'show', 'create', 'store', 'destroy', 'edit', 'update']]);
 $router->resource('projects', 'ProjectController', ['only' => ['index', 'show', 'create', 'store', 'destroy', 'edit', 'update']]);
 $router->resource('cv', 'CvController', ['only' => ['index', 'show', 'create', 'store', 'destroy', 'edit', 'update']]);

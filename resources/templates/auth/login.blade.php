@@ -20,7 +20,7 @@
     <div class="form-group">
       <label for="inputEmail" class="col-lg-2 control-label">Email</label>
       <div class="col-lg-10">
-        <input type="text" name="email" class="form-control" id="inputEmail" placeholder="Email">
+        <input type="text" name="email" class="form-control" id="inputEmail" placeholder="Email" required autofocus>
       </div>
     </div>
     <div class="form-group">

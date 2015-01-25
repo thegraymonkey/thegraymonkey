@@ -44,13 +44,13 @@
 					<li @if($current_page === 'posts')class="active"@endif><a href="{{ url('posts') }}">Blog</a></li>            
 					<li @if($current_page === 'projects')class="active"@endif><a href="{{ url('projects') }}">Projects</a></li>            
 					<li @if($current_page === 'cv')class="active"@endif><a href="{{ url('cv') }}">CV</a></li>
-					<li @if($current_page === 'contacts')class="active"@endif><a href="{{ url('contacts')}}">Contact</a></li>
+					<li @if($current_page === 'contacts')class="active"@endif><a href="{{ url('contacts') }}">Contact</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right"> 
 					@if(Auth::check())					
 					<li><a href="{{ url('auth/logout') }}">Logout</a></li>
 					@else
-					<li><a href=""><img src="/images/srb.png" alt="srb"></a></li>
+					<li @if($current_page === 'srb')class="active"@endif><a href="{{ url('srb') }}"><img src="/images/srb.png" alt="srb"></a></li>
 					<li @if($current_page === 'auth.login')class="active"@endif><a href="{{ url('auth/login') }}">Login</a></li>
 					@endif
 				</ul>

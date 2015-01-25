@@ -23,7 +23,7 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>My great new love</h1>
-              <p>Waiting for Larave 5 with great anticipation.</p>
+              <p>Waiting for Laravel 5 with great anticipation.</p>
               <p><a class="btn btn-lg btn-primary" href="http://laravel.com/docs/master" role="button">Laravel documentation</a></p>
             </div>
           </div>

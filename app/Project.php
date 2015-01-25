@@ -11,6 +11,7 @@ class Project extends Model{
 			'description',
 			'content',
 			'filename',
+			'file_ext',
 			'img_description',
 			'link'
 		];
@@ -25,5 +26,7 @@ class Project extends Model{
 	{
 		return sprintf('/upload/projects/%s.%s', $this->filename, $this->file_ext);
 	}
+
+	
 
 }

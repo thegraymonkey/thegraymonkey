@@ -5,6 +5,7 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Redirect;
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller {
 
@@ -33,9 +34,9 @@ class AuthController extends Controller {
 		]);
 
 		$credentials = $request->only('email', 'password');
-	
 
-		if ($this->auth->attempt($credentials, $request->has('remember')))
+
+		if (Auth::attempt($credentials, $request->has('remember')))
 		{
 			return redirect('posts');
 		}
@@ -46,4 +47,12 @@ class AuthController extends Controller {
 						'email' => 'These credentials do not match our records.',
 					]);
 	}
+
+	public function getLogout()
+	{
+		Auth::logout();
+
+		return redirect('/');
+	}
+
 }

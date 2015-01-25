@@ -1,7 +1,7 @@
 
 @if(!Auth::check());
 	<div class="jumbotron">
-		<div class="container " style="padding-top:50px">
+		<div class="container " style="padding-top:40px">
 			<div class="row">
 				<div class="col-md-9">
 					<h1>{!! $intro_title !!}</h1>

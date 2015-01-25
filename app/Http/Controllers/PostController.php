@@ -55,7 +55,7 @@ class PostController extends Controller {
 		{
 		$post = Post::find($id);
 
-		return view('posts.edit', ['current_page'=>'posts/$id/edit'])->with('post', $post);
+		return view('posts.edit', ['current_page'=>'posts'])->with('post', $post);
 		}
 		return redirect('posts')->with('message', 'Login to edit post!');
 	

@@ -33,13 +33,13 @@
     <div class="form-group">
       <label for="description" class="col-lg-2 control-label">Description</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" name="description" id="description" placeholder="Description">
+        <input type="text" class="form-control" name="description" id="description" placeholder="Description" value="{{ $project->description }}">
       </div>
     </div>
     <div class="form-group">
       <label for="content" class="col-lg-2 control-label">Content</label>
       <div class="col-lg-10">
-        <textarea class="form-control" name="content" id="content"></textarea>
+        <textarea class="form-control" name="content" id="content">{{ $project->content }}</textarea>
       </div>
     </div>
     <div class="form-group">  
@@ -51,13 +51,13 @@
     <div class="form-group">
       <label for="image_description" class="col-lg-2 control-label">Image description</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" name="image_description" id="image_description" placeholder="Image Description">
+        <input type="text" class="form-control" name="image_description" id="image_description" placeholder="Image Description" value="{{ $project->img_description }}">
       </div>
     </div>
     <div class="form-group">
       <label for="link" class="col-lg-2 control-label">Link</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" name="link" id="link" placeholder="Link">
+        <input type="text" class="form-control" name="link" id="link" placeholder="Link" value="{{ $project->link }}">
       </div>
     </div>
     <div class="form-group">
