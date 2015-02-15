@@ -47,7 +47,7 @@ class CvController extends Controller {
 	{
 		$cv = Cv::find($id);
 
-		return view('cv.edit', ['current_page'=>'cv/$id/edit'])->with('cv', $cv);
+		return view('cv.edit', ['current_page'=>'cv'])->with('cv', $cv);
 	}
 
 	public function update($id)

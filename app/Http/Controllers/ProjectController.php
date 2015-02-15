@@ -16,7 +16,7 @@ class ProjectController extends Controller {
 
 	public function index()
 	{
-		$projects = Project::all();
+		$projects = Project::orderBy('created_at', 'desc')->get();
 
 		return view('projects.index', ['projects'=>$projects, 'current_page'=>'projects']);
 	}
@@ -121,7 +121,7 @@ class ProjectController extends Controller {
 			{
 				$project->fill($input);
 
-				$project = $this->assignImage($project, $file);
+				$project = $this->assignImage($project, $image);
 
 				$project->save();
 

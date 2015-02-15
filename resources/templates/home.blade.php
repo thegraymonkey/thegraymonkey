@@ -1,5 +1,7 @@
 @extends('layout')
 
+
+
 <div style="margin-top:50px; " id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -54,7 +56,7 @@
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <div class="container marketing">
+    <div style="padding-top:0px;" class="container marketing">
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
@@ -81,13 +83,13 @@
 
       <!-- START THE FEATURETTES -->
 
-      <hr class="featurette-divider">
+      <hr>
       <h1>My aims and causes</h1>
-      <hr class="featurette-divider">
+      <hr>
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 style="margin-top:100px;" class="featurette-heading">Make great web apps!<span class="text-muted"> Everyday!</span></h2>
+          <h2  class="featurette-heading">Make great web apps!<span class="text-muted"> Everyday!</span></h2>
           <p class="lead"></p>
         </div>
         <div class="col-md-5">
@@ -95,23 +97,23 @@
         </div>
       </div>
 
-      <hr class="featurette-divider">
+      <hr>
 
       <div class="row featurette">
         <div class="col-md-5">
-          <img style="margin-top:50px" class="featurette-image img-responsive" src="/images/feauture2.png" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          <img style="padding-top:30px" class="featurette-image img-responsive" src="/images/feauture2.png" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
         </div>
         <div class="col-md-7">
-          <h2 class="featurette-heading">Play EPT.<span class="text-muted"> Satelite in only.</span></h2>
+          <h2  class="featurette-heading">Play EPT.<span class="text-muted"> Satelite in only.</span></h2>
           <p class="lead"> the first ever EPT took place in Casino de Barcelona in September 2004 when 229 players competed for a first prize of €80,000. Swedish player Alex Stevic took down the Main Event after a four hour plus heads-up battle against Irishman, Dave O’Callaghan - still one of the longest heads-up duels in EPT history.<br> <a href="http://www.europeanpokertour.com/" target="blank">European Poker Tour</a></p>
         </div>
       </div>
 
-      <hr class="featurette-divider">
+      <hr>
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 style="margin-top:100px;" class="featurette-heading">Save Pandas!<span class="text-muted"> Adopt Panda!</span></h2>
+          <h2  class="featurette-heading">Save Pandas!<span class="text-muted"> Adopt Panda!</span></h2>
           <p class="lead">Adopting a panda is a fun and easy way to have a direct impact on the daily life and care of our beloved pandas. While it is a symbolic adoption, your panda adoption is still a personal choice. You may have a specific panda in mind to adopt, or you can select from the many adults and cubs available for adoption. They all need to be taken care of and loved! If you know the name of the panda you’d like to adopt but don’t see him or her listed here, just send us an email! <br><a href="http://www.pandasinternational.org/" target="blank">Pandas International</a></p>
         </div>
         <div class="col-md-5">
@@ -125,3 +127,6 @@
 
       </div>
        <!-- /.container -->
+      @section('top_css')
+        <link href="/bootstrap/css/carousel.css" rel="stylesheet">
+      @stop

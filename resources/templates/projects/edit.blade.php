@@ -21,7 +21,7 @@
 <form class="form-horizontal well" method="POST" action="{{ route('projects.update', [$project->id]) }}" enctype="multipart/form-data">
   
 <input type="hidden" name="_token" value="{{ csrf_token() }}">  
-
+<input type="hidden" name="_method" value="PUT">
     <legend>Create a new project</legend>
 
     <div class="form-group">

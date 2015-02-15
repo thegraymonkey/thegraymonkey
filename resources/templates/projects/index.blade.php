@@ -18,7 +18,7 @@
 @foreach($projects as $project)
 <div  class="blog-post">
 	<div class="container">
-		<div class="row">
+		<div style="margin-bottom:25px" class="row">
 			<div class="col-md-6">
 		        <h1 class="blog-post-title">{{ $project->title }}</h1>
 		        <p class="blog-post-meta">{{ $project->created_at }} by <strong>Andjelko</strong></p>
@@ -27,14 +27,15 @@
 		            </blockquote>
 		            <p> {{ $project->content }}</p>
 		    </div>
-		    <div style="margin-bottom:15px"class="col-md-6">
+		    <div class="col-md-6">
+		    	<div style="margin-top:25px">
 		    	<a class="fancybox" rel="group1" title="{{ $project->img_description }}" href="{{ $project->getImagePath() }}">
 				<img src="{{ url($project->getImagePath()) }}" class="img-thumbnail">
 				</a>
-				
+				<a style="margin-left:250px" target="blank" href="{{ $project->link }}">See it online</a>
+				</div>
 			</div>	
-			<a style="margin-left:250px" target="blank" href="{{ $project->link }}">See it online</a>
-				
+
 			
 		</div>
 	</div>
@@ -53,7 +54,10 @@
 			</div>	
 		@endif
 
+<hr>
 @endforeach
+
+
 
 @stop
 
